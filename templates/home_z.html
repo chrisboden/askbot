@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Mentors</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container mt-5 text-center">
+    <h1 class="mt-5 main-title">🤓</h1>
+    <!-- Search form -->
+    <form id="search-form" class="mt-4">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter your question" name="query">
+      </div>
+      <button type="submit" class="btn btn-primary mt-3 p-3" style="
+      width: 19em">Ask Your Mentor</button>
+    </form>
+    <p class="see-sources">
+      <a href="#" class="mt-4" data-toggle="modal" data-target="#mentorsmodal">
+        See the sources
+      </a>
+    </p>
+    <!-- Results container -->
+    <div id="results" class="text-left mt-3 results-holder">
+        <!-- Loading spinner -->
+      <div id="loading-spinner" class="text-center" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only">Getting answer...</span>
+        </div>
+      </div>
+      <div class="robot-says" style="display: none;"><span class="robot-emoji" >🤖</span><span> says</span></div>
+    </div>
+  </div>
+
+  <!-- jQuery and AJAX script -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function() {
+      // Send GET request to /list_of_books endpoint on page load
+      $.get("/mentors", function(data) {
+        // Insert returned data into the #results element
+        $("#mentors").html(data);
+      });
+
+      // Submit form via AJAX
+      $("#search-form").submit(function(event) {
+        event.preventDefault();
+
+        // Show loading spinner
+        $("#loading-spinner").show();
+
+        // Get form data
+        var formData = $(this).serialize();
+
+        // Send POST request to /search endpoint
+        $.ajax({
+          type: "POST",
+          url: "/search",
+          data: formData,
+          success: function(response) {
+            // Split response by new line characters
+            var lines = response["choices"][0]["text"].split("\n");
+            // Iterate over each line
+            lines.forEach(function(line) {
+              // Create a p element for each line
+              var p = $("<p></p>").text(line);
+              // Append the p element to the results container
+              $("#results").append(p);
+              // Hide loading spinner
+              $("#loading-spinner").hide();
+              $(".robot-says").show();
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <!-- Modal -->
+  <div class="modal fade" id="mentorsmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Your Mentors</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="mentors">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

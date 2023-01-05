@@ -1,0 +1,15 @@
+###### Requirements without Version Specifiers ######
+openai
+transformers
+bs4
+flask
+livereload
+pyppeteer
+langdetect
+asyncio
+uuid
+json
+csv
+re
+faiss
+numpy

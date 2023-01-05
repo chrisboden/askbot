@@ -1,0 +1,94 @@
+<p>John Doerr: Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs</p>
+<p>Michael A. Hiltzik: Dealers of Lightning: Xerox PARC and the Dawn of the Computer Age</p>
+<p>Joan Magretta: Understanding Michael Porter: The Essential Guide to Competition and Strategy</p>
+<p>Elad Gil: High Growth Handbook</p>
+<p>Robert B. Cialdini: Pre-Suasion: A Revolutionary Way to Influence and Persuade</p>
+<p>Blake Masters: Zero to One: Notes on Start Ups, or How to Build the Future</p>
+<p>Ed Catmull: Creativity, Inc.: Overcoming the Unseen Forces That Stand in the Way of True Inspiration</p>
+<p>Madhavan Ramanujam: Monetizing Innovation: How Smart Companies Design the Product Around the Price</p>
+<p>Geoffrey A. Moore: Crossing the Chasm: Marketing and Selling High-Tech Products to Mainstream Customers</p>
+<p>Reid Hoffman: Blitzscaling: The Lightning-Fast Path to Building Massively Valuable Companies</p>
+<p>Rob Fitzpatrick: The Mom Test: How to talk to customers & learn if your business is a good idea when everyone is lying to you</p>
+<p>Ken Kocienda: Creative Selection: Inside Apple's Design Process During the Golden Age of Steve Jobs</p>
+<p>Marc Randolph: That Will Never Work: The Birth of Netflix and the Amazing Life of an Idea</p>
+<p>Walter Isaacson: Steve Jobs</p>
+<p>Alexis Ohanian: Without Their Permission: How the 21st Century Will Be Made, Not Managed</p>
+<p>Safi Bahcall: Loonshots: How to Nurture the Crazy Ideas That Win Wars, Cure Diseases, and Transform Industries</p>
+<p>Jim Collins: Good to Great: Why Some Companies Make the Leap... and Others Don't</p>
+<p>Jason Fried: Rework</p>
+<p>Brad Feld: The Startup Community Way: Evolving an Entrepreneurial Ecosystem</p>
+<p>Laszlo Bock: Work Rules!: Insights from Inside Google That Will Transform How You Live and Lead</p>
+<p>Daniel H. Pink: To Sell Is Human: The Surprising Truth About Moving Others</p>
+<p>Matt Ridley: The Evolution of Everything: How New Ideas Emerge</p>
+<p>Leigh Gallagher: The Airbnb Story: How Three Ordinary Guys Disrupted an Industry, Made Billions . . . and Created Plenty of Controversy</p>
+<p>Gary Keller: The One Thing: The Surprisingly Simple Truth Behind Extraordinary Results</p>
+<p>Deepak Malhotra: Negotiating the Impossible: How to Break Deadlocks and Resolve Ugly Conflicts</p>
+<p>Atul Gawande: The Checklist Manifesto: How to Get Things Right</p>
+<p>Giff Constable: Talking to Humans</p>
+<p>Matthew Skelton: Team Topologies: Organizing Business and Technology Teams for Fast Flow</p>
+<p>Kevin Kelly: What Technology Wants</p>
+<p>Michael Ovitz: Who Is Michael Ovitz?</p>
+<p>Andy Hertzfeld: Revolution in The Valley: The Insanely Great Story of How the Mac Was Made</p>
+<p>James P. Carse: Finite and Infinite Games: A Vision of Life as Play and Possibility</p>
+<p>Walter Isaacson: Einstein: His Life and Universe</p>
+<p>Jim Collins: Built to Last: Successful Habits of Visionary Companies</p>
+<p>Geoffrey West: Scale: The Universal Laws of Growth, Innovation, Sustainability, and the Pace of Life, in Organisms, Cities, Economies, and Companies</p>
+<p>Andrew S. Grove: Only the Paranoid Survive. Lessons from the CEO of INTEL Corporation</p>
+<p>Reid Hoffman: Masters of Scale: Surprising Truths from the World's Most Successful Entrepreneurs</p>
+<p>Jeffrey Bussgang: Mastering the VC Game: A Venture Capital Insider Reveals How to Get from Start-up to IPO on Your Terms</p>
+<p>Steve Blank: The Startup Owner's Manual: The Step-By-Step Guide for Building a Great Company</p>
+<p>Marty Neumeier: The Brand Flip: Why customers now run companies and how to profit from it</p>
+<p>Patrick Lencioni: The Five Dysfunctions of a Team: A Leadership Fable</p>
+<p>Mikkel Svane: Startupland: How Three Guys Risked Everything to Turn an Idea into a Global Business</p>
+<p>Donella H. Meadows: Thinking in Systems: A Primer</p>
+<p>Reed Hastings: No Rules Rules: Netflix and the Culture of Reinvention</p>
+<p>Matthew Syed: Black Box Thinking: Why Most People Never Learn from Their Mistakes--But Some Do</p>
+<p>Michael J. Mauboussin: Think Twice: Harnessing the Power of Counterintuition</p>
+<p>Kim Malone Scott: Radical Candor: Be a Kick-Ass Boss Without Losing Your Humanity</p>
+<p>Ray Dalio: Principles: Life and Work</p>
+<p>Joan Magretta: Understanding Michael Porter: The Essential Guide to Competition and Strategy</p>
+<p>W. Chan Kim: Blue Ocean Strategy, Expanded Edition: How to Create Uncontested Market Space and Make the Competition Irrelevant</p>
+<p>Eric Schmidt: Trillion Dollar Coach: The Leadership Playbook of Silicon Valley's Bill Campbell</p>
+<p>Paul Smith: Sell with a Story: How to Capture Attention, Build Trust, and Close the Sale</p>
+<p>Niall Ferguson: The Great Degeneration: How Institutions Decay and Economies Die</p>
+<p>Phil Knight: Shoe Dog</p>
+<p>Annie Duke: Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts</p>
+<p>Timothy Ferriss: Tribe of Mentors: Short Life Advice from the Best in the World</p>
+<p>Marc Benioff: Behind the Cloud: The Untold Story of How Salesforce.com Went from Idea to Billion-Dollar Company-and Revolutionized an Industry</p>
+<p>Adam M. Grant: Originals: How Nonconformists Move the World</p>
+<p>Hal Elrod: The Miracle Morning for Writers: How to Build a Writing Ritual That Increases Your Impact and Your Income, Before 8AM</p>
+<p>Robert Iger: The Ride of a Lifetime: Lessons Learned from 15 Years as CEO of the Walt Disney Company</p>
+<p>Eric Ries: The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses</p>
+<p>David Epstein: Range: Why Generalists Triumph in a Specialized World</p>
+<p>Jack Welch: Winning</p>
+<p>Chip Heath and Dan Heath: Made to Stick: Why Some Ideas Survive and Others Die</p>
+<p>Andrew S. Grove: Swimming Across: A Memoir</p>
+<p>Reid Hoffman: The Startup of You: Adapt to the Future, Invest in Yourself, and Transform Your Career</p>
+<p>Matt Ridley: The Rational Optimist: How Prosperity Evolves</p>
+<p>Hamilton Wright Helmer: 7 Powers: The Foundations of Business Strategy</p>
+<p>Bob Tinker: Survival to Thrival: Building the Enterprise Startup - Book 1 The Company Journey</p>
+<p>Steve Krug: Don't Make Me Think: A Common Sense Approach to Web Usability</p>
+<p>Andrew Chen: The Cold Start Problem: How to Start and Scale Network Effects</p>
+<p>Ron Chernow: Titan: The Life of John D. Rockefeller, Sr.</p>
+<p>Brent Schlender: Becoming Steve Jobs: The Evolution of a Reckless Upstart into a Visionary Leader</p>
+<p>Jessica Livingston: Founders at Work: Stories of Startups' Early Days</p>
+<p>Clayton M. Christensen: The Innovator's Solution: Creating and Sustaining Successful Growth</p>
+<p>Chris Anderson: The Long Tail: Why the Future of Business Is Selling Less of More</p>
+<p>Annie Duke: How to Decide: Simple Tools for Making Better Choices</p>
+<p>Michael Lewis: Boomerang: Travels in the New Third World</p>
+<p>Frederick P. Brooks Jr.: The Mythical Man-Month: Essays on Software Engineering</p>
+<p>Ken Segall: Insanely Simple: The Obsession That Drives Apple's Success</p>
+<p>Michael S. Malone: Intel Trinity,The: How Robert Noyce, Gordon Moore, and Andy Grove Built the World's Most Important Company</p>
+<p>Jon Gertner: The Idea Factory: Bell Labs and the Great Age of American Innovation</p>
+<p>Robert B. Cialdini: Influence: The Psychology of Persuasion</p>
+<p>Paul Graham: Hackers & Painters: Big Ideas from the Computer Age</p>
+<p>Ray Dalio: The Changing World Order: Why Nations Succeed and Fail</p>
+<p>Scott Kupor: Secrets of Sand Hill Road: Venture Capital and How to Get It</p>
+<p>Clayton M. Christensen: The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail</p>
+<p>Brene Brown: Rising Strong: The Reckoning. The Rumble. The Revolution.</p>
+<p>Daniel Coyle: The Culture Code: The Secrets of Highly Successful Groups</p>
+<p>Alejandro Cremades: The Art of Startup Fundraising</p>
+<p>Shane Parrish: The Great Mental Models: General Thinking Concepts</p>
+<p>Michael Bungay Stanier: The Coaching Habit: Say Less, Ask More & Change the Way You Lead Forever</p>
+<p>Andrew S. Grove: High Output Management</p>
+<p>Michael J. Mauboussin: The Success Equation: Untangling Skill and Luck in Business, Sports, and Investing</p>

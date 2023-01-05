@@ -1,0 +1,60 @@
+[
+  {
+    "uuid": "a53c2b5f-4a9c-4903-a6da-58d86a40c949",
+    "timestamp": 902522.08576925,
+    "query": "what can we learn from netflix about building product teams?",
+    "query_results": "Reed Hastings: The success of Netflix is founded on these types of unlikely stories: small teams consisting exclusively of significantly above-average performers\u2014what Reed refers to as dream teams\u2014working on big hairy problems.\nMarc Randolph: Now, of course, Netflix\u2019s culture is famous. There\u2019s a much-downloaded PowerPoint presentation given to all new employees. But the truth is, it wasn\u2019t the product of meetings or careful planning or roundtable discussions. It arose organically, through a shared set of values among a team of people who had been through their fair share of offices\u2014startups, major corporations, and everywhere in between. Netflix, for all of us, was an opportunity to work at the kind of place we\u2019d always dreamed about. It was a chance to do things truly our way. Culture isn\u2019t what you say. It\u2019s what you do.\nReid Hoffman: Moreover, Netflix produces exactly what it knows its customers want based on their past viewing habits, eliminating the waste of all those pilots, and only loses customers when they make a proactive decision to cancel their subscription. The more a person uses Netflix, the better Netflix gets at providing exactly what that person wants. And increasingly, what people want is the original content that is exclusive to Netflix. The legendary screenwriter William Goldman famously wrote of Hollywood, \u201cNobody knows anything.\u201d To which Reed Hastings replies, \u201cNetflix does.\u201d And all this came about because Hastings had the insight and persistence to wait nearly a decade for Moore\u2019s Law to turn his long-term vision from an impossible pipe dream into one of the most successful media companies in history. Moore\u2019s Law has worked its magic many other times, enabling new technologies ranging from computer animation (Pixar) to online file storage (Dropbox) to smartphones (Apple). Each of those technologies followed the same path from pipe dream to world-conquering reality, all driven by Gordon Moore\u2019s 1965 insight.\nErin Meyer: In 2015 I read an article in the Huffington Post, titled 'One reason for Netflix's success: it treats employees like grownups'. The article explained, Netflix assumes that you have amazing judgment and judgment is the solution for almost every ambiguous problem, not process.\nReed Hastings: it made our workforce smarter. When you give low-level employees access to information that is generally reserved for high-level executives, they get more done on their own. They work faster without stopping to ask for information and approval. They make better decisions without needing input from the top.",
+    "prompt": "You are a startup founder AI coach. Founders ask you questions. Answer the question by synthesizing the provided context. Context is a list of expert quotes. However the quotes may not be relevant or in the right rank order. Construct your answer by choosing the most relevant parts of that context. \n\nContext:\nReed Hastings: The success of Netflix is founded on these types of unlikely stories: small teams consisting exclusively of significantly above-average performers\u2014what Reed refers to as dream teams\u2014working on big hairy problems.\nMarc Randolph: Now, of course, Netflix\u2019s culture is famous. There\u2019s a much-downloaded PowerPoint presentation given to all new employees. But the truth is, it wasn\u2019t the product of meetings or careful planning or roundtable discussions. It arose organically, through a shared set of values among a team of people who had been through their fair share of offices\u2014startups, major corporations, and everywhere in between. Netflix, for all of us, was an opportunity to work at the kind of place we\u2019d always dreamed about. It was a chance to do things truly our way. Culture isn\u2019t what you say. It\u2019s what you do.\nReid Hoffman: Moreover, Netflix produces exactly what it knows its customers want based on their past viewing habits, eliminating the waste of all those pilots, and only loses customers when they make a proactive decision to cancel their subscription. The more a person uses Netflix, the better Netflix gets at providing exactly what that person wants. And increasingly, what people want is the original content that is exclusive to Netflix. The legendary screenwriter William Goldman famously wrote of Hollywood, \u201cNobody knows anything.\u201d To which Reed Hastings replies, \u201cNetflix does.\u201d And all this came about because Hastings had the insight and persistence to wait nearly a decade for Moore\u2019s Law to turn his long-term vision from an impossible pipe dream into one of the most successful media companies in history. Moore\u2019s Law has worked its magic many other times, enabling new technologies ranging from computer animation (Pixar) to online file storage (Dropbox) to smartphones (Apple). Each of those technologies followed the same path from pipe dream to world-conquering reality, all driven by Gordon Moore\u2019s 1965 insight.\nErin Meyer: In 2015 I read an article in the Huffington Post, titled 'One reason for Netflix's success: it treats employees like grownups'. The article explained, Netflix assumes that you have amazing judgment and judgment is the solution for almost every ambiguous problem, not process.\nReed Hastings: it made our workforce smarter. When you give low-level employees access to information that is generally reserved for high-level executives, they get more done on their own. They work faster without stopping to ask for information and approval. They make better decisions without needing input from the top.\n\nQ: what can we learn from netflix about building product teams?\nA:",
+    "completion": {
+      "id": "cmpl-6Uty6nhCZdJmBXyQue1IXbyki80bC",
+      "object": "text_completion",
+      "created": 1672823002,
+      "model": "text-davinci-003",
+      "choices": [
+        {
+          "text": " Netflix has demonstrated the power of building product teams with small, highly-skilled teams working on big, ambitious projects. This approach has been enabled by Netflix's culture of trust and autonomy, which allows employees to make decisions without needing input from the top. This has enabled Netflix to produce exactly what its customers want based on their past viewing habits, and to create original content that is exclusive to Netflix. Ultimately, this approach has been driven by Reed Hastings' insight and persistence to wait for the right technology to turn his vision into reality.",
+          "index": 0,
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 617,
+        "completion_tokens": 106,
+        "total_tokens": 723
+      }
+    },
+    "elapsed_time": 8.880237457924522,
+    "temp": 0.1,
+    "model": "text-davinci-003"
+  },
+  {
+    "uuid": "c99e97b6-706c-4637-9f4c-400600eb4977",
+    "timestamp": 902382.279191125,
+    "query": "what can reed hastings teach us about culture?",
+    "query_results": "Reed Hastings: Rochelle\u2019s feedback was frank but thoughtful and genuinely intended to help Reed improve. But the big risk in fostering a climate of candor is all the ways people may both purposely and accidentally misuse it.\nReed Hastings: that\u2014no matter where you come from\u2014when it comes to working across cultural differences, talk, talk, talk.\nReed Hastings: above all you have to be humble, you have to be curious, and you have to remember to listen before you speak and to learn before you teach. With this approach, you can\u2019t help but become more effective every day in this ever-fascinating multicultural world.\nReed Hastings: above all you have to be humble, you have to be curious, and you have to remember to listen before you speak and to learn before you teach.\nReed Hastings: Reed doesn\u2019t pay much attention to turnover rate, believing that replacement costs are not as important as ensuring the right person is in every position.",
+    "prompt": "You are a startup founder AI coach. Founders ask you questions. Answer the question by synthesizing the provided context. Context is a list of expert quotes. However the quotes may not be relevant or in the right rank order. Construct your answer by choosing the most relevant parts of that context. \n\nContext:\nReed Hastings: Rochelle\u2019s feedback was frank but thoughtful and genuinely intended to help Reed improve. But the big risk in fostering a climate of candor is all the ways people may both purposely and accidentally misuse it.\nReed Hastings: that\u2014no matter where you come from\u2014when it comes to working across cultural differences, talk, talk, talk.\nReed Hastings: above all you have to be humble, you have to be curious, and you have to remember to listen before you speak and to learn before you teach. With this approach, you can\u2019t help but become more effective every day in this ever-fascinating multicultural world.\nReed Hastings: above all you have to be humble, you have to be curious, and you have to remember to listen before you speak and to learn before you teach.\nReed Hastings: Reed doesn\u2019t pay much attention to turnover rate, believing that replacement costs are not as important as ensuring the right person is in every position.\n\nQ: what can reed hastings teach us about culture?\nA:",
+    "completion": {
+      "id": "cmpl-6UtvpQ9dQ1JljhHebtgmHStXjtPVB",
+      "object": "text_completion",
+      "created": 1672822861,
+      "model": "text-davinci-003",
+      "choices": [
+        {
+          "text": " Reed Hastings emphasizes the importance of talking, being humble, being curious, listening before speaking, and learning before teaching when it comes to working across cultural differences. He also believes that it is more important to ensure the right person is in every position than to worry about replacement costs.",
+          "index": 0,
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 55,
+        "total_tokens": 345
+      }
+    },
+    "elapsed_time": 6.093293583020568,
+    "temp": 0.1,
+    "model": "text-davinci-003"
+  }
+]
