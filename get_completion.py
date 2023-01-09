@@ -8,7 +8,7 @@ import os
 # Variables that can be tweaked
 
 gpt3_model = "text-davinci-003"
-gpt3_temperature = 0.1
+gpt3_temperature = 0.2
 max_allowable_tokens = 4096
 
 # Completions function for passing the prompt plus the query results to openai's completions api and having it synthesise and return a result
@@ -61,10 +61,11 @@ def completions(user_input, results_list):
         top_p=0,
         n=1,
         max_tokens=max_tokens,
+        echo=False,
         temperature=gpt3_temperature
     )
 
-    print(completion["choices"][0]["text"])
+    print(completion)
 
     # We ask for a bunch of things to be returned so that they can be used in the askapp.py file, eg in the search function where we call the addhistory function to add to the json file.
 

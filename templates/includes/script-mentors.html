@@ -1,0 +1,9 @@
+<script>
+    $(function() {
+      // Send GET request to /list_of_books endpoint on page load
+      $.get("/mentors", function(data) {
+        // Insert returned data into the #results element
+        $("#mentors").html(data);
+      });
+    });
+</script>

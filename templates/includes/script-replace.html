@@ -1,0 +1,6 @@
+<script>
+function replaceWithImage(text) {
+  // Use a capturing group to capture the two capitalized letters
+  return text.replace(/@([A-Z]{2}):/g, '<div class="spacer"></div><img src="../static/img/$1.png" class="avatar">');
+}
+</script>

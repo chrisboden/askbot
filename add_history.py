@@ -2,14 +2,14 @@
 import uuid
 import json
 
-def add_history(start_time, query, results_list, prompt, response, elapsed_time, gpt3_temperature, gpt3_model):
+def add_history(current_time, query, results_list, prompt, response, elapsed_time, gpt3_temperature, gpt3_model):
   # generate a unique identifier for the entry
   entry_uuid = str(uuid.uuid4())
 
   # create the JSON entry
   entry = {
     "uuid": entry_uuid,
-    "timestamp": start_time,
+    "timestamp": current_time,
     "query": query,
     "query_results": results_list,
     "prompt": prompt,
@@ -20,7 +20,7 @@ def add_history(start_time, query, results_list, prompt, response, elapsed_time,
   }
 
   # open the data/ask_history.json file in read mode
-  with open('data/ask_history.json', 'r') as f:
+  with open('static/data/ask_history.json', 'r') as f:
     try:
       # read the contents of the file
       history = json.load(f)
@@ -32,6 +32,6 @@ def add_history(start_time, query, results_list, prompt, response, elapsed_time,
   history.insert(0, entry)
 
   # open the data/ask_history.json file in write mode
-  with open('data/ask_history.json', 'w') as f:
+  with open('static/data/ask_history.json', 'w') as f:
     # write the updated history to the file
     json.dump(history, f, indent=2)

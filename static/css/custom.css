@@ -49,7 +49,7 @@
 .result-item{
     width: 100%;
     padding: 2em 5em;
-    font-size: 1.25em;
+    font-size: 1.05em;
 }
 .result-item:nth-child(even){
     background: #31323b;;
@@ -110,4 +110,51 @@
 
 .nav-item-link{
     padding:1em;
+}
+
+.question {
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    background: #555;
+    padding: 1em;
+}
+
+.hidden{
+    display:none
+}
+
+.card-body{
+    font-size: 0.65em;
+}
+
+.time::before{
+    content:"Query time:";
+    font-weight: 500;
+}
+
+.tokens-completion::before{
+    content: "Completion tokens: ";
+    font-weight: 500;
+}
+
+.tokens-prompt::before{
+    content: "Prompt tokens: ";
+    font-weight: 500;
+}
+
+.tokens-total::before{
+    content: "Prompt tokens: ";
+    font-weight: 500;
+}
+
+.avatar{
+    width: 2.5em;
+    display: inline;
+    border-radius: 50%;
+    float: left;
+    margin-right: 0.75em;
+}
+
+.spacer {
+    margin-top: 1.75em;
 }

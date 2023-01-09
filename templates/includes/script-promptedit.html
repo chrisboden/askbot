@@ -1,0 +1,38 @@
+<script>
+    // The script for managing the prompt editing
+    $(function() {
+      // Send GET request to /get-prompt endpoint on modal show event
+      $.get("/get-prompt?cache_busting_param=" + Date.now(), function(data) {
+        // Insert returned data into the textarea element
+        $("#prompttext").html(data);
+      });
+  
+      $('#promptmodal').on('show.bs.modal', function() {
+        // Send GET request to /get-prompt endpoint to refresh the modal content
+        $.get("/get-prompt", function(data) {
+          // Insert returned data into the textarea element
+          $("#prompttext").html(data);
+        });
+      });
+  
+      // Submit form via AJAX when the form is submitted
+      $("#promptedit").submit(function(event) {
+        event.preventDefault();
+        // Get form data
+        var formData = $(this).serialize();
+        // Send POST request to /save-prompt endpoint
+        
+        $.ajax({
+          type: "POST",
+          url: "/save-prompt",
+          data: formData,
+          contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+          processData: false,
+          success: function(response) {
+            // Show success message
+            console.log(response);
+          }
+        });
+      });
+    });
+</script>

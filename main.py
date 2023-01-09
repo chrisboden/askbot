@@ -7,6 +7,8 @@ import os
 import time
 import json
 import urllib.parse
+from datetime import datetime
+
 
 # Import from other python files in our code
 from setup_index import index, metadata
@@ -23,6 +25,9 @@ def home():
 
 @app.route("/search", methods=["POST"])
 def search():
+  # Get current time
+  current_time = datetime.now()
+  current_time = current_time.strftime("%Y-%m-%dT%H:%M:%S")
   # Start the timer
   start_time = time.perf_counter()
   # Take the query input from the form
@@ -39,14 +44,14 @@ def search():
   elapsed_time = end_time - start_time
 
   #Add a record to the ask_history json file
-  add_history(start_time, query, results_list, prompt, completion, elapsed_time, gpt3_temperature, gpt3_model)
+  add_history(current_time, query, results_list, prompt, completion, elapsed_time, gpt3_temperature, gpt3_model)
 
   # Uncomment here if you want to see results printed in console
   # Print the various outputs to test
   # print(f"The starttime timestamp is {start_time}")
   # print(f"The query is {query}")
   # print(f"The query embedding is{query_embedding}")
-  # print(f"The query results are {results_list}")
+  print(f"The query results are {results_list}")
   # print(f"The prompt is {prompt}")
   # print(f"The context length is {context_length}")
   # print(f"The total prompt tokens is {prompt_tokens_count}")
@@ -115,7 +120,6 @@ def save_prompt():
 
 if __name__ == "__main__":
   app.run()
-
 
 # This is for livereloading the website when you're in dev mode
 from livereload import Server

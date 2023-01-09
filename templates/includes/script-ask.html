@@ -1,0 +1,97 @@
+<script>
+    function loadHistory() {
+     // Get the latest n items from the ask_history.json file
+     $.getJSON("../static/data/ask_history.json", function(data) {
+       // Sort the items by timestamp in descending order
+       data.sort(function(a, b) {
+         return b.timestamp - a.timestamp;
+       });
+       // Get the first n items
+       var latestItems = data.slice(0, 10);
+       // Clear the results container
+       $("#results").empty();
+       // Iterate over the latest items in reverse order
+       for (var i = latestItems.length - 1; i >= 0; i--) {
+         var item = latestItems[i];
+         // Create a div.result-item element
+         var resultItem = $("<div class=\"result-item\"></div>");
+         resultItem.attr("data-uuid", item.uuid);
+         // Append the question to the result-item div
+         resultItem.append($("<div class=\"question\"></div>").text(item.query));
+         // Append the answer to the result-item div
+         var answer = $("<div class=\"answer\"></div>");
+         item.completion.choices[0].text.split("\n").forEach(function(line) {
+           // Replace the text with the image tag using the replaceWithImage() function
+           var replacedLine = replaceWithImage(line);
+           // Use the html() function to set the content of the p element
+           answer.append($("<p></p>").html(replacedLine));
+         });
+         resultItem.append(answer);
+
+
+         var meta_btn_holder = $("<div class=\"meta-btn-holder\"></div>");
+         var meta_btn = $("<a class=\"btn btn-dark\" data-bs-toggle=\"collapse\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\">Info</a>");
+         meta_btn.attr("href", "#" + item.uuid);
+   
+         meta_btn_holder.append(meta_btn);
+         resultItem.append(meta_btn_holder);
+   
+         // Add collapsible div
+         var collapse = $("<div class=\"collapse\"></div>")
+         collapse.attr("id", item.uuid);
+   
+         // Append the meta data to the result-item div
+         var meta = $("<div class=\"meta card card-body bg-dark\"></div>");
+         // Get the timestamp as a Date object
+         var date = new Date(item.timestamp);
+         // Get the string representation of the date and time in UTC
+         var dateTimeStr = date.toUTCString();
+         // Remove the timezone offset at the end of the string
+         dateTimeStr = dateTimeStr.slice(0, -4);
+         // Append the formatted date and time to the result-item div
+         meta.append($("<div class=\"timestamp\"></div>").text(dateTimeStr));
+   
+         meta.append($("<div class=\"tokens-prompt\">Prompt tokens: </div>").text(item.completion.usage.prompt_tokens));
+         meta.append($("<div class=\"tokens-completion\">Completion tokens: </div>").text(item.completion.usage.completion_tokens));
+         meta.append($("<div class=\"tokens-total\">Total tokens: </div>").text(item.completion.usage.total_tokens));
+         meta.append($("<div class=\"time\"></div>").text(item.elapsed_time.toFixed(2)));
+   
+         collapse.append(meta);
+         resultItem.append(collapse);
+   
+         // Append the prompt to the result-item div
+         resultItem.append($("<div class=\"prompt hidden\"></div>").text(item.prompt));
+         // Append the result-item div to the results container
+         $("#results").append(resultItem);
+       }
+     });
+   }
+   
+   // Load the history on page load
+   loadHistory();
+   
+   // Submit form via AJAX
+   $("#search-form").submit(function(event) {
+     event.preventDefault();
+   
+     // Show loading spinner
+     $("#loading-spinner").show();
+   
+     // Get form data
+     var formData = $(this).serialize();
+   
+     // Send POST request to /search endpoint
+     $.ajax({
+       type: "POST",
+       url: "/search",
+       data: formData,
+       success: function(response) {
+         // Load the history
+         loadHistory();
+         // Hide loading spinner
+         $("#loading-spinner").hide();
+       }
+     });
+   });
+   
+</script>
