@@ -11,5 +11,5 @@ uuid
 json
 csv
 re
-faiss
+faiss-cpu
 numpy

@@ -1,11 +1,13 @@
-# THis file is used to convert the base.csv file to base.json
-# This is the required format for the faiss index
-
 import csv
 import json
 import uuid
+from pathlib import Path
 
 def csv_to_json(csv_file, json_file):
+    # Convert the file paths to strings if they are Path objects
+    csv_file = str(csv_file)
+    json_file = str(json_file)
+
     # Open the CSV file and read in the rows
     with open(csv_file, 'r') as csv_file:
         csv_reader = csv.DictReader(csv_file)

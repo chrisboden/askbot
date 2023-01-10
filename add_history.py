@@ -1,6 +1,7 @@
 # Import system functions that shouldn't need to be installed via pip
 import uuid
 import json
+from pathlib import Path
 
 def add_history(current_time, query, results_list, prompt, response, elapsed_time, gpt3_temperature, gpt3_model):
   # generate a unique identifier for the entry
@@ -20,7 +21,7 @@ def add_history(current_time, query, results_list, prompt, response, elapsed_tim
   }
 
   # open the data/ask_history.json file in read mode
-  with open('static/data/ask_history.json', 'r') as f:
+  with open(Path('static/data/ask_history.json'), 'r') as f:
     try:
       # read the contents of the file
       history = json.load(f)
@@ -32,6 +33,6 @@ def add_history(current_time, query, results_list, prompt, response, elapsed_tim
   history.insert(0, entry)
 
   # open the data/ask_history.json file in write mode
-  with open('static/data/ask_history.json', 'w') as f:
+  with open(Path('static/data/ask_history.json'), 'w') as f:
     # write the updated history to the file
     json.dump(history, f, indent=2)

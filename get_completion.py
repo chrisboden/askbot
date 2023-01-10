@@ -1,6 +1,7 @@
 # Import programs that are installed via pip
 import openai
 from transformers import GPT2TokenizerFast
+from pathlib import Path
 
 # Import system functions that shouldn't need to be installed via pip
 import os
@@ -15,7 +16,7 @@ max_allowable_tokens = 4096
 
 def completions(user_input, results_list):
     # Read the contents of the prompt.txt file and assign it to a string variable
-    with open("prompt_template.txt", "r") as f:
+    with open(Path("prompt_template.txt"), "r") as f:
         prompt_text = f.read()
 
     # Convert the results_list variable to a single string

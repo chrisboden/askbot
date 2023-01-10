@@ -8,7 +8,7 @@ import time
 import json
 import urllib.parse
 from datetime import datetime
-
+from pathlib import Path
 
 # Import from other python files in our code
 from setup_index import index, metadata
@@ -18,6 +18,9 @@ from get_completion import completions
 from add_history import add_history
 
 app = Flask(__name__)
+
+# Create a Path object representing the current working directory
+cwd = Path.cwd()
 
 @app.route("/")
 def home():
@@ -65,7 +68,7 @@ def search():
 @app.route("/mentors", methods=["GET"])
 def get_authors():
   # Set the path to the json file
-  json_file = 'data/main/sources.json'
+  json_file = Path('data/main/sources.json')
 
   # Read the data from the json file
   with open(json_file, 'r') as f:
@@ -93,7 +96,7 @@ def get_authors():
 def get_prompt():
   try:
     # Read the prompt text from the prompt.txt file. 
-    with open("prompt_template.txt", "r") as f:
+    with open(Path("prompt_template.txt"), "r") as f:
       prompt_text = f.read()
     # Return the prompt text
     return prompt_text
@@ -109,7 +112,7 @@ def save_prompt():
     edited_prompt = request.form['edited_prompt']
 
     # Write the edited prompt text to the prompt.txt file
-    with open("prompt_template.txt", "w") as f:
+    with open(Path("prompt_template.txt"), "w") as f:
       f.write(edited_prompt)
     # Return success message
     return "Prompt text updated successfully"

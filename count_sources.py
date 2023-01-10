@@ -1,12 +1,13 @@
 import csv
 import json
 import os
+from pathlib import Path
 
 # Set the path to the directory containing the csv files
-csv_dir = 'data/scrapes/complete'
+csv_dir = Path('data/scrapes/complete')
 
 # Set the path to the json file
-json_file = 'data/main/sources.json'
+json_file = Path('data/main/sources.json')
 
 # Initialize an empty list to store the data
 data = []

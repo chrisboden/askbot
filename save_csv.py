@@ -1,8 +1,12 @@
 import csv
+from pathlib import Path
 
 quote_set = set()
 
 def write_quotes_to_csv(quotes, file_path):
+    # Convert the file path to a string if it is a Path object
+    file_path = str(file_path)
+
     # Write the quotes to a CSV file
     with open(file_path, 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['quoteText', 'bookTitle', 'bookAuthor', 'tags']

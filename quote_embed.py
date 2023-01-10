@@ -3,6 +3,8 @@ import openai
 import requests
 import os
 import shutil
+from pathlib import Path
+import shutil
 
 def create_embeddings(input_csv_file):
   # Initialize the embeddings variable to an empty list
@@ -63,7 +65,7 @@ def create_embeddings(input_csv_file):
     embeddings.append(embedding)
 
   # Set the output file path to 'embeds/new.csv'
-  output_csv_file = 'data/main/base.csv'
+  output_csv_file = Path('data/main/base.csv')
 
   # Open the output CSV file in append mode
   with open(output_csv_file, 'a', newline='') as f:
@@ -79,22 +81,24 @@ def create_embeddings(input_csv_file):
     # Print a success message
     print("Done!")
 
+
 def main():
   # Prompt the user for the input directory path
   input_dir = input("Enter the path to the input directory: ")
 
-  # Iterate over each file in the input directory
-  for file_name in os.listdir(input_dir):
-    # Check if the file is a CSV file
-    if file_name.endswith(".csv"):
-      # Create the full file path
-      file_path = os.path.join(input_dir, file_name)
+  # Convert the input directory path to a Path object
+  input_dir = Path(input_dir)
 
+  # Iterate over each file in the input directory
+  for file_path in input_dir.iterdir():
+    # Check if the file is a CSV file
+    if file_path.suffix == ".csv":
       # Create embeddings for the file
       create_embeddings(file_path)
 
       # Move the file to the 'data/scrapes/complete' directory
-      shutil.move(file_path, 'data/scrapes/complete')
+      shutil.move(file_path, Path('data/scrapes/complete'))
+
 
 if __name__ == '__main__':
   main()

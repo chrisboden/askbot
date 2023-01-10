@@ -3,6 +3,7 @@ from pyppeteer import launch
 from bs4 import BeautifulSoup
 from langdetect import detect_langs
 import asyncio
+from pathlib import Path
 
 # Import system functions that shouldn't need to be installed via pip
 import csv
@@ -34,9 +35,10 @@ print(f'Final URL to be scraped: {url}')
 quotes = asyncio.get_event_loop().run_until_complete(scrape_quotes(url))
 
 # Check if file exists
-file_path = f'data/scrapes/{author}_{book_title}.csv'
-if not os.path.exists(file_path):
+file_path = Path(f'data/scrapes/{author}_{book_title}.csv')
+if not file_path.exists():
     open(file_path, 'w').close()
+
 
 # Create a set to store the quotes
 quote_set = set()
