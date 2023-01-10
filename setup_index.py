@@ -10,7 +10,6 @@ from pathlib import Path
 from setup_json import csv_to_json
 
 # Set up the various file path variables so that the paths are relative no matter the environment
-
 cwd = Path.cwd()
 data_path = cwd.joinpath('data', 'main')
 csv_path = data_path.joinpath('base.csv')

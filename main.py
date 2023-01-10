@@ -19,9 +19,12 @@ from add_history import add_history
 
 app = Flask(__name__)
 
-# Create a Path object representing the current working directory
+# Set up the various file path variables so that the paths are relative no matter the environment
 cwd = Path.cwd()
-print(f"This is the current wrking dir: {cwd}")
+data_path = cwd.joinpath('data', 'main')
+sources_json_path = data_path.joinpath('sources.json')
+prompt_txt_path = cwd.joinpath('prompt_template.txt')
+
 
 @app.route("/")
 def home():
@@ -69,7 +72,7 @@ def search():
 @app.route("/mentors", methods=["GET"])
 def get_authors():
   # Set the path to the json file
-  json_file = Path('data/main/sources.json')
+  json_file = sources_json_path
 
   # Read the data from the json file
   with open(json_file, 'r') as f:
@@ -97,7 +100,7 @@ def get_authors():
 def get_prompt():
   try:
     # Read the prompt text from the prompt.txt file. 
-    with open(Path("prompt_template.txt"), "r") as f:
+    with open(prompt_txt_path, "r") as f:
       prompt_text = f.read()
     # Return the prompt text
     return prompt_text
@@ -113,7 +116,7 @@ def save_prompt():
     edited_prompt = request.form['edited_prompt']
 
     # Write the edited prompt text to the prompt.txt file
-    with open(Path("prompt_template.txt"), "w") as f:
+    with open(prompt_txt_path, "w") as f:
       f.write(edited_prompt)
     # Return success message
     return "Prompt text updated successfully"
