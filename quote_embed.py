@@ -10,6 +10,8 @@ import shutil
 
 cwd = Path(__file__).parent.resolve()
 scrapes_path = cwd.joinpath('data', 'scrapes', 'complete')
+data_path = cwd.joinpath('data', 'main')
+csv_path = data_path.joinpath('base.csv')
 
 def create_embeddings(input_csv_file):
   # Initialize the embeddings variable to an empty list
