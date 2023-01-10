@@ -12,11 +12,17 @@ gpt3_model = "text-davinci-003"
 gpt3_temperature = 0.2
 max_allowable_tokens = 4096
 
+
+# Set up the various file path variables so that the paths are relative no matter the environment
+cwd = Path(__file__).parent.resolve()
+prompt_txt_path = cwd.joinpath('prompt_template.txt')
+
+
 # Completions function for passing the prompt plus the query results to openai's completions api and having it synthesise and return a result
 
 def completions(user_input, results_list):
     # Read the contents of the prompt.txt file and assign it to a string variable
-    with open(Path("prompt_template.txt"), "r") as f:
+    with open(prompt_txt_path, "r") as f:
         prompt_text = f.read()
 
     # Convert the results_list variable to a single string

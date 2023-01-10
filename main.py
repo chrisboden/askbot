@@ -20,11 +20,10 @@ from add_history import add_history
 app = Flask(__name__)
 
 # Set up the various file path variables so that the paths are relative no matter the environment
-cwd = Path.cwd()
+cwd = Path(__file__).parent.resolve()
 data_path = cwd.joinpath('data', 'main')
 sources_json_path = data_path.joinpath('sources.json')
 prompt_txt_path = cwd.joinpath('prompt_template.txt')
-
 
 @app.route("/")
 def home():
@@ -129,8 +128,8 @@ if __name__ == "__main__":
   app.run()
 
 # This is for livereloading the website when you're in dev mode
-from livereload import Server
-server = Server(app.wsgi_app)
-server.watch('static/custom.css')
-server.watch('templates/home.html')
-server.serve(open_url_delay=True)
+# from livereload import Server
+# server = Server(app.wsgi_app)
+# server.watch('static/custom.css')
+# server.watch('templates/home.html')
+# server.serve(open_url_delay=True)

@@ -8,7 +8,7 @@ import shutil
 
 # Set up the paths for the various files so that they are relative paths
 
-cwd = Path.cwd()
+cwd = Path(__file__).parent.resolve()
 scrapes_path = cwd.joinpath('data', 'scrapes', 'complete')
 
 def create_embeddings(input_csv_file):
