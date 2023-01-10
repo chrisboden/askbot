@@ -6,6 +6,11 @@ import shutil
 from pathlib import Path
 import shutil
 
+# Set up the paths for the various files so that they are relative paths
+
+cwd = Path.cwd()
+scrapes_path = cwd.joinpath('data', 'scrapes', 'complete')
+
 def create_embeddings(input_csv_file):
   # Initialize the embeddings variable to an empty list
   embeddings = []
@@ -65,7 +70,7 @@ def create_embeddings(input_csv_file):
     embeddings.append(embedding)
 
   # Set the output file path to 'embeds/new.csv'
-  output_csv_file = Path('data/main/base.csv')
+  output_csv_file = csv_path
 
   # Open the output CSV file in append mode
   with open(output_csv_file, 'a', newline='') as f:
@@ -97,7 +102,8 @@ def main():
       create_embeddings(file_path)
 
       # Move the file to the 'data/scrapes/complete' directory
-      shutil.move(file_path, Path('data/scrapes/complete'))
+      shutil.move(file_path, scrapes_path)
+
 
 
 if __name__ == '__main__':

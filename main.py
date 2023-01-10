@@ -21,6 +21,7 @@ app = Flask(__name__)
 
 # Create a Path object representing the current working directory
 cwd = Path.cwd()
+print(f"This is the current wrking dir: {cwd}")
 
 @app.route("/")
 def home():
