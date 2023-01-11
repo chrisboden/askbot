@@ -5,7 +5,7 @@ from pathlib import Path
 
 # Set up the various file path variables so that the paths are relative no matter the environment
 cwd = Path(__file__).parent.resolve()
-data_path = cwd.joinpath('static', 'main')
+data_path = cwd.joinpath('static', 'data')
 ask_history_path = data_path.joinpath('ask_history.json')
 
 def add_history(current_time, query, results_list, prompt, response, elapsed_time, gpt3_temperature, gpt3_model):
