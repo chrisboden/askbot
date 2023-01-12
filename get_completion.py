@@ -9,7 +9,8 @@ import os
 # Variables that can be tweaked
 
 gpt3_model = "text-davinci-003"
-gpt3_temperature = 0.2
+gpt3_top_p = 1
+gpt3_temperature = 0.00
 max_allowable_tokens = 4096
 
 
@@ -21,53 +22,39 @@ prompt_txt_path = cwd.joinpath('prompt_template.txt')
 # Completions function for passing the prompt plus the query results to openai's completions api and having it synthesise and return a result
 
 def completions(user_input, results_list):
-    # Read the contents of the prompt.txt file and assign it to a string variable
     with open(prompt_txt_path, "r") as f:
         prompt_text = f.read()
 
-    # Convert the results_list variable to a single string
     results_list = "\n".join(results_list)
 
-    # Initialize the tokenizer
     tokenizer = GPT2TokenizerFast.from_pretrained("gpt2")
 
-    # Tokenize the results_list string
     results_list_tokens = tokenizer.encode(results_list)
 
-    # Get the number of tokens in the results_list
     context_length = len(results_list_tokens)
-    # print(f"The context length is {context_length}")
 
-    # Truncate the results_list string at the end of the nearest sentence
     if context_length > 2500:
-        for i, token in enumerate(results_list_tokens):
-            if token == tokenizer.encode(".")[0] and i < 2500:
+        for i in range(len(results_list_tokens)-1, -1, -1):
+            if results_list_tokens[i] == tokenizer.encode(".")[0] and i < 2500:
                 results_list = tokenizer.decode(results_list_tokens[:i+1])
                 break
 
-    # Build the prompt string using the prompt_text, user_input and results
-    prompt = f"{prompt_text}\n\nContext:\n{results_list}\n\nQ: {user_input}\nA:"
-    # print(f"Prompt is: {prompt}")
+    prompt = f"{prompt_text}\n\nQUOTES:\n{results_list}\n\nQ: {user_input}\nA:"
 
-    # Tokenize the prompt string
     prompt_tokens = tokenizer.encode(prompt)
 
-    # Get the number of tokens in the prompt
     prompt_tokens_count = len(prompt_tokens)
-    # print(f"The total prompt tokens is {prompt_tokens_count}")
 
-    # Calculate the max_tokens value
     max_tokens = max_allowable_tokens - prompt_tokens_count
-    # print(f"The max tokens remaining is {max_tokens}")
 
     # Call the OpenAI API with the prompt
     openai.api_key = os.getenv("OPENAI_API_KEY")
     completion = openai.Completion.create(
         model=gpt3_model,
         prompt=prompt,
-        top_p=0,
+        top_p=gpt3_top_p,
         n=1,
-        max_tokens=max_tokens,
+        max_tokens=1088,
         echo=False,
         temperature=gpt3_temperature
     )

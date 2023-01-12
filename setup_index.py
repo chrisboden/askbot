@@ -4,7 +4,7 @@ import json
 import faiss
 import numpy as np
 from pathlib import Path
-
+import sqlite3
 
 # Import the function that converts the CSV to JSON from makejson.py
 from setup_json import csv_to_json
@@ -39,6 +39,39 @@ index.add(X)
 # Save the index to a file
 faiss.write_index(index, str(index_path))
 
+# Connect to the database
+conn = sqlite3.connect("metadata.db")
+cursor = conn.cursor()
 
-metadata_count=len([item for item in metadata if "id" in item])
-print(f"There are {metadata_count} metadata items")
+#Drop the metadata table if it already exists
+cursor.execute("DROP TABLE IF EXISTS metadata")
+
+# Create the metadata table
+with sqlite3.connect("metadata.db") as conn:
+    cursor = conn.cursor()
+    cursor.execute("""CREATE TABLE metadata (
+                      id TEXT PRIMARY KEY,
+                      contentAuthor TEXT,
+                      contentSource TEXT,
+                      contentType TEXT,
+                      quoteText TEXT)""")
+    for vector in data["vectors"]:
+        cursor.execute("INSERT INTO metadata VALUES (?,?,?,?,?)",
+                       (vector["metadata"]["id"],
+                        vector["metadata"]["contentAuthor"],
+                        vector["metadata"]["contentSource"],
+                        vector["metadata"]["contentType"],
+                        vector["metadata"]["quoteText"]))
+    conn.commit()
+
+    # Print out the first 3 rows of the metadata table
+    cursor.execute("SELECT * FROM metadata")
+    print(cursor.fetchmany(3))
+
+
+
+with sqlite3.connect("metadata.db") as conn:
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM metadata")
+    result = cursor.fetchone()
+    print(f"There are {result[0]} rows in the database")

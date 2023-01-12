@@ -38,6 +38,7 @@
     height: 100vh;
     width: 100%;
     overflow-y: scroll;
+    -webkit-transform: translateZ(0);
     padding-bottom: 5em;
     display: flex;
     flex-direction: column-reverse;
@@ -50,6 +51,7 @@
     width: 100%;
     padding: 2em 5em;
     font-size: 1.05em;
+    content-visibility: auto;
 }
 .result-item:nth-child(even){
     background: #31323b;;
@@ -119,6 +121,10 @@
     padding: 1em;
 }
 
+.quote{
+    margin-top:1.5em;
+}
+
 .hidden{
     display:none
 }
@@ -143,7 +149,7 @@
 }
 
 .tokens-total::before{
-    content: "Prompt tokens: ";
+    content: "Total tokens: ";
     font-weight: 500;
 }
 
@@ -157,4 +163,8 @@
 
 .spacer {
     margin-top: 1.75em;
+}
+
+.meta-btn-holder .btn{
+    font-size: 0.6em;
 }

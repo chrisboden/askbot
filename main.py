@@ -11,6 +11,7 @@ from datetime import datetime
 from pathlib import Path
 
 # Import from other python files in our code
+import sqlite3
 from setup_index import index, metadata
 from get_answers import searchq
 from get_embedding import get_embedding
@@ -28,6 +29,7 @@ prompt_txt_path = cwd.joinpath('prompt_template.txt')
 @app.route("/")
 def home():
   return render_template("home.html")
+  print("template rendered")
 
 @app.route("/search", methods=["POST"])
 def search():
@@ -41,28 +43,33 @@ def search():
   # Generate embedding for user query
   query_embedding = get_embedding(query)
   # Call the search function with the required arguments
-  results_list = searchq(index, query_embedding, metadata)
+  results_list = searchq(index, query_embedding, 'metadata.db')
+  print(f"The query results are {results_list}")
+
   # Call completions function and pass in the query and results_list
+  if not results_list:
+      return "Aborting completion because no database results"
   completion, prompt_tokens_count, context_length, prompt, max_tokens, results_list, gpt3_temperature, gpt3_model = completions(query, results_list)
+
   # Stop the timer
   end_time = time.perf_counter()
   # Calculate elapsed time
   elapsed_time = end_time - start_time
 
-  #Add a record to the ask_history json file
-  add_history(current_time, query, results_list, prompt, completion, elapsed_time, gpt3_temperature, gpt3_model)
-
   # Uncomment here if you want to see results printed in console
   # Print the various outputs to test
   # print(f"The starttime timestamp is {start_time}")
-  # print(f"The query is {query}")
+  print(f"The query is {query}")
   # print(f"The query embedding is{query_embedding}")
-  print(f"The query results are {results_list}")
-  # print(f"The prompt is {prompt}")
+  print(f"The prompt is {prompt}")
   # print(f"The context length is {context_length}")
   # print(f"The total prompt tokens is {prompt_tokens_count}")
   # print(f"The prompt is {completion}")
-  # print(f"The max tokens remaining is {max_tokens}")
+  print(f"The max tokens remaining is {max_tokens}")
+
+  #Add a record to the ask_history json file
+  add_history(current_time, query, results_list, prompt, completion, elapsed_time, gpt3_temperature, gpt3_model)
+
   # print(f"Elapsed time: {elapsed_time:.4f} seconds")
 
   # Return response as JSON
@@ -85,9 +92,8 @@ def get_authors():
     # Extract the data from the record
     book_author = record['bookAuthor']
     book_title = record['bookTitle']
-    quote_total = record['quoteTotal']
     # Build the result string
-    result = f'<p><b>{book_author}</b>: {book_title} - {quote_total}</p>'
+    result = f'<p><b>{book_author}</b>: {book_title}</p>'
     # Append the result to the results string
     results += result
     
