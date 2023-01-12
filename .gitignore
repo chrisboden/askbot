@@ -5,3 +5,4 @@ data/main/*
 !sources.json
 
 data/scrapes/*
+data/utils/
