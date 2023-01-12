@@ -1,7 +1,8 @@
 # Ignore everything in data main
 data/scrapes/
 data/utils/
+
 data/main/
 
-!sources.json
+!*/data/main/sources.json
 
