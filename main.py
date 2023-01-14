@@ -134,8 +134,8 @@ if __name__ == "__main__":
   app.run()
 
 # This is for livereloading the website when you're in dev mode
-# from livereload import Server
-# server = Server(app.wsgi_app)
-# server.watch('static/custom.css')
-# server.watch('templates/home.html')
-# server.serve(open_url_delay=True)
+from livereload import Server
+server = Server(app.wsgi_app)
+server.watch('static/custom.css')
+server.watch('templates/home.html')
+server.serve(open_url_delay=True)

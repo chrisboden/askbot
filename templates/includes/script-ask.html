@@ -39,10 +39,8 @@ function createResultItem(item) {
   resultItem.attr("data-uuid", item.uuid);
   resultItem.append($("<div class=\"question\"></div>").text(item.query));
   var answer = $("<div class=\"answer\"></div>");
-  item.completion.choices[0].text.split("\n").forEach(function(line) {
-    var replacedLine = replaceWithImage(line);
-    answer.append($("<p></p>").html(replacedLine));
-  });
+  var replacedText = replaceWithImage(item.completion.choices[0].text);
+  answer.html(replacedText);
   resultItem.append(answer);
   return resultItem;
 }
@@ -56,10 +54,29 @@ function createMetaBtnHolder(item) {
 }
 
 function createCollapse(item) {
-  var collapse = $("<div class=\"collapse\"></div>")
-  collapse.attr("id", item.uuid);
-  return collapse;
-}
+   var collapse = $("<div class='collapse'></div>");
+   collapse.attr("id", item.uuid);
+
+   // Append the meta data to the result-item div
+   var meta = $("<div class='meta card card-body bg-dark'></div>");
+   // Get the timestamp as a Date object
+   var date = new Date(item.timestamp);
+   // Get the string representation of the date and time in UTC
+   var dateTimeStr = date.toUTCString();
+   // Remove the timezone offset at the end of the string
+   dateTimeStr = dateTimeStr.slice(0, -4);
+   // Append the formatted date and time to the result-item div
+   meta.append($("<div class='timestamp'></div>").text(dateTimeStr));
+
+   meta.append($("<div class='tokens-prompt'>Prompt tokens: </div>").text(item.completion.usage.prompt_tokens));
+   meta.append($("<div class='tokens-completion'>Completion tokens: </div>").text(item.completion.usage.completion_tokens));
+   meta.append($("<div class='tokens-total'>Total tokens: </div>").text(item.completion.usage.total_tokens));
+   meta.append($("<div class='time'></div>").text(item.elapsed_time.toFixed(2)));
+
+   collapse.append(meta);
+   return collapse;
+ }
+
 
 function createMeta(item) {
   var meta = $("<div class=\"meta card card-body bg-dark\"></div>");
@@ -101,7 +118,6 @@ function sendSearchRequest(formData) {
 function hideLoadingSpinner() {
   $("#loading-spinner").hide();
 }
-
 
 // Load the history on page load
 loadHistory();

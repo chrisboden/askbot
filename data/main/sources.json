@@ -30,5 +30,13 @@
     "bookTitle": "The Hard Thing About Hard Things",
     "shortcode":"@BH:",
     "booklink": "https://www.amazon.com.au/Hard-Thing-About-Things-Building/dp/B00N45SB4U/ref=sr_1_5?keywords=The+Hard+Thing+About+Hard+Things&qid=1673401562&sr=8-5"
+  },
+  {
+    "fileName": "blitz.csv",
+    "bookAuthor": "Reid Hoffman",
+    "avatar": "RH.png",
+    "bookTitle": "Blitzscaling",
+    "shortcode":"@RH:",
+    "booklink": "https://www.amazon.com.au/Blitzscaling-Lightning-Fast-Building-Massively-Companies/dp/0008303630/ref=sr_1_3?keywords=blitzscaling&qid=1673661791&sr=8-3"
   }
 ]

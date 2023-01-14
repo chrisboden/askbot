@@ -1,6 +1,64 @@
 <script>
-function replaceWithImage(text) {
-  // Use a capturing group to capture the two capitalized letters
-  return text.replace(/@([A-Z]{2}):/g, '<div class="spacer"></div><img src="../static/img/$1.png" class="avatar">');
-}
-</script>
+  var books = [
+  {
+    "fileName": "elad gil_high growth handbook.csv",
+    "bookAuthor": "Elad Gil",
+    "avatar": "EG.png",
+    "bookTitle": "High Growth Handbook",
+    "shortcode":"@EG:",
+    "booklink": "https://www.amazon.com.au/High-Growth-Handbook/dp/B07FSQCF22/ref=sr_1_1?crid=12XT16S5H6G9R&keywords=elad+gil+high+growth&qid=1673402098&s=audible&sprefix=elad+gil+high+growth%2Caudible%2C333&sr=1-1"
+  },
+  {
+    "fileName": "eric ries_the lean startup.csv",
+    "bookAuthor": "Eric Ries",
+    "avatar": "ER.png",
+    "bookTitle": "The Lean Startup",
+    "shortcode":"@ER:",
+    "booklink": "https://www.amazon.com.au/Lean-Startup-Innovation-Successful-Businesses/dp/0670921602/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1673402181&sr=1-1"
+  },
+  {
+    "fileName": "andrew grove_high output management.csv",
+    "bookAuthor": "Andrew S. Grove",
+    "avatar": "AG.png",
+    "bookTitle": "High Output Management",
+    "shortcode":"@AG:",
+    "booklink": "https://www.amazon.com.au/High-Output-Management-Andrew-Grove/dp/0679762884/ref=sr_1_1?crid=324EFJI061UYS&keywords=grove+high+output&qid=1673402141&s=audible&sprefix=grove+high+outout%2Caudible%2C230&sr=1-1-catcorr"
+  },
+  {
+    "fileName": "ben horowitz.csv",
+    "bookAuthor": "Ben Horowitz",
+    "avatar": "BH.png",
+    "bookTitle": "The Hard Thing About Hard Things",
+    "shortcode":"@BH:",
+    "booklink": "https://www.amazon.com.au/Hard-Thing-About-Things-Building/dp/B00N45SB4U/ref=sr_1_5?keywords=The+Hard+Thing+About+Hard+Things&qid=1673401562&sr=8-5"
+  },
+  {
+    "fileName": "blitz.csv",
+    "bookAuthor": "Reid Hoffman",
+    "avatar": "RH.png",
+    "bookTitle": "Blitzscaling",
+    "shortcode":"@RH:",
+    "booklink": "https://www.amazon.com.au/Blitzscaling-Lightning-Fast-Building-Massively-Companies/dp/0008303630/ref=sr_1_3?keywords=blitzscaling&qid=1673661791&sr=8-3"
+  }
+];
+
+  function replaceWithImage(text) {
+      text = text.replace(/\n/g, '<br/><br/>');
+      text = text.replace(/@([A-Z]{2}):([^@]+)/g, function(match, p1, p2) {
+          var source = p1;
+          var book = books.find(b => b.shortcode === "@"+source+":");
+          var template = `
+          <div class="quote">
+              <img src="../static/img/${book.avatar}" alt="" class="avatar">
+              <span class="quote-holder">
+                <span class="source">${book.bookAuthor}</span>
+                <span class="quote-text">${p2}</span>
+              </span>
+              <span class="book" data-bs-toggle="tooltip" data-bs-title="${book.bookTitle}"><a href="${book.booklink}" class="book-link">📖</a></span>
+          </div>`;
+          return template;
+      });
+      return text;
+  }
+
+  </script>

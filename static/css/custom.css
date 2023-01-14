@@ -98,6 +98,12 @@
     left:calc(260px + 1.5em);
 }
 
+.nav-info{
+    padding: 1em;
+    color: #ddd;
+    font-weight: 200;
+}
+
 .nav-item{
     border-top:1px solid #333;
 }
@@ -168,3 +174,21 @@
 .meta-btn-holder .btn{
     font-size: 0.6em;
 }
+
+.source{
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    color: #eee;
+    letter-spacing: 0.035em;
+}
+
+.book-link{
+    text-decoration: none;
+    font-size: 1.25em;
+    padding-top: 1em!important;
+    display: inline;
+    vertical-align: top;
+}
+

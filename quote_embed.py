@@ -5,6 +5,10 @@ import os
 import shutil
 from pathlib import Path
 import shutil
+import dotenv
+
+config = dotenv.dotenv_values(".env")
+openai.api_key = config['OPENAI_API_KEY']
 
 # Set up the paths for the various files so that they are relative paths
 

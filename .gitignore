@@ -1,3 +1,5 @@
+.env
+
 # Ignore everything in data main
 data/scrapes/
 data/utils/
