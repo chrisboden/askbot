@@ -5,5 +5,6 @@ Ben Horowitz (@BH): CEO of Loudcloud & Founder of VC fund A16Z. Expert on tough 
 Elad Gil (@EG): top product exec at Google and founder of Color Genomics. Now investor & growth advisor.
 Eric Ries (@ER): Successful tech founder and expert on Lean startup principles & early stage ventures.
 Peter Thiel (@PT): Former Paypal CEO and legenderary investor. Expert on strategy & thinking big.
+Reid Hoffman (@RH): Founder of Linkedin, now VC with Greylock. Expert on scaling businesses.
 
 Complete your answer (A:) by copying ALL of the relevant information from the quotes, and writing it in the first person as a personal response by the Source to the question. If there are no matching quotes, say 'Sorry, I can't help you with that one'. Do not make up your own answers from your training data. Preface each of your quote responses with the @initials of the source, eg @BH:. Separate each response with a newline.
