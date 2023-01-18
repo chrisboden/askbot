@@ -7,9 +7,6 @@ import dotenv
 # Import system functions that shouldn't need to be installed via pip
 import os
 
-config = dotenv.dotenv_values(".env")
-openai.api_key = config['OPENAI_API_KEY']
-
 # Variables that can be tweaked
 
 gpt3_model = "text-davinci-003"

@@ -46,5 +46,29 @@
     "bookTitle": "Good To Great",
     "shortcode":"@JC:",
     "booklink": "https://www.amazon.com.au/Good-Great-Jim-Collins/dp/0712676090/ref=sr_1_5?keywords=good+to+great&qid=1673961773&sr=8-5"
+  },
+  {
+    "fileName": "cold.csv",
+    "bookAuthor": "Andrew Chen",
+    "avatar": "AC.png",
+    "bookTitle": "The Cold Start Problem",
+    "shortcode":"@AC:",
+    "booklink": "https://www.amazon.com.au/Cold-Start-Problem-business-launch-pad/dp/1847942784/ref=sr_1_1?keywords=cold+start+problem&qid=1674019916&sr=8-1"
+  },
+  {
+    "fileName": "fs.csv",
+    "bookAuthor": "Shane Parrish",
+    "avatar": "SP.png",
+    "bookTitle": "The Great Mental Models",
+    "shortcode":"@SP:",
+    "booklink": "https://www.amazon.com.au/Great-Mental-Models-Thinking-Concepts/dp/1999449002/ref=sr_1_1?keywords=shane+parrish+mental+models&qid=1674021441&sr=8-1"
+  },
+  {
+    "fileName": "pt.csv",
+    "bookAuthor": "Peter Thiel",
+    "avatar": "PT.png",
+    "bookTitle": "Zero to One",
+    "shortcode":"@PT:",
+    "booklink": "https://www.amazon.com.au/Zero-One-Blake-Masters/dp/0753555204/ref=sr_1_5?keywords=zero+to+one+thiel&qid=1674025544&sr=8-5"
   }
 ]
